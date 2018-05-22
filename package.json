@@ -1,8 +1,8 @@
 {
-  "name": "phaser-top-down",
+  "name": "phaser3-typescript-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/main.js",
   "scripts": {
     "start": "http-server",
     "build": "webpack",
