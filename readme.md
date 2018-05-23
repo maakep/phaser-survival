@@ -5,6 +5,15 @@ Minimalistic setup.
 
 Install [node.js](https://nodejs.org/en/)
 
+## Setting up
+Clone the repository and add your own repository as origin
+```git
+git clone https://github.com/maakep/phaser3-typescript-template your-game
+git remote remove origin
+git remote add origin https://github.com/your-user/your-game.git
+```
+
+
 ## Installing
 ```sh
 npm i
