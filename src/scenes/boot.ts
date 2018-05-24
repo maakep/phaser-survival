@@ -1,12 +1,18 @@
 import * as Phaser from "phaser";
 
 export class Boot extends Phaser.Scene {
+  constructor() {
+    super({ key: "Boot" });
+    console.log("Boot ctor");
+  }
   init() {
-    console.log("Booting");
+    console.log("Boot init");
   }
 
-  preload () {
-    console.log("Load things necessary during preload scene");
-    this.scene.start("preload");
+  preload() {
+  } 
+
+  create() {
+    this.scene.start("Preload");    
   }
 }

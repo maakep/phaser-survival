@@ -1,5 +1,5 @@
 {
-  "name": "phaser3-typescript-template",
+  "name": "phaser-survival",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/main.js",
@@ -7,7 +7,7 @@
     "start": "http-server",
     "build": "webpack",
     "watch": "webpack --watch"
-  }, 
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {

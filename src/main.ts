@@ -7,16 +7,25 @@ import { Game } from "./scenes/game";
 class Main extends Phaser.Game {
   constructor() {
     const config: GameConfig = {
+      parent: "root",
       type: Phaser.AUTO,
+      physics: { 
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 500 },
+            debug: false
+        }
+      },
+      scene: [
+        Boot,
+        Preload,
+        Game
+      ],
       width: 800,
-      height: 600,
+      height: 592,
     };
     super(config);
-
-    this.scene.add("boot", Boot, false);
-    this.scene.add("preload", Preload, false);
-    this.scene.add("game", Game, false);
-    this.scene.start("preload");
+    this.scene.start("Boot");
   }
 }
 
