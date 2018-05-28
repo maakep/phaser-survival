@@ -11,9 +11,8 @@ class Main extends Phaser.Game {
       type: Phaser.AUTO,
       physics: { 
         default: 'arcade',
-        arcade: {
-            gravity: { y: 500 },
-            debug: false
+        impact: {
+          
         }
       },
       scene: [
