@@ -12,7 +12,7 @@ export class Preload extends Phaser.Scene {
   preload () {
     this.load.image("player", "./assets/player.png");
     this.load.tilemapTiledJSON("level1", "/assets/maps/map2.json");
-    this.load.spritesheet("maptiles", "/assets/temp-sheet.png", { frameWidth: 16, frameHeight: 16 });
+    this.load.spritesheet("maptiles", "/assets/maps/temp-sheet.png", { frameWidth: 16, frameHeight: 16 });
   }
 
   create() {

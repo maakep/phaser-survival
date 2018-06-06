@@ -1,18 +1,23 @@
 import * as Phaser from "phaser";
+import { IControls } from "./controls";
 
 export class Player extends Phaser.Physics.Arcade.Sprite {
   cursors: CursorKeys;
-  wasd: {up: Phaser.Input.Keyboard.Key, left: Phaser.Input.Keyboard.Key, down: Phaser.Input.Keyboard.Key, right: Phaser.Input.Keyboard.Key};
+  controls: IControls;
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, "player");
     
     this.cursors = this.scene.input.keyboard.createCursorKeys();
-    this.wasd = {
-      up: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
-      left: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
-      down: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
-      right: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+    this.controls = {
+      w: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
+      a: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
+      s: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
+      d: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+      q: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q),
+      e: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E),
+      f: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F),
+      space: this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE),
     };
 
     // Pixel bleeding may happen at scaling. Solution: extrude tiles.
@@ -26,22 +31,23 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
   update() {
     let body = this.body as Phaser.Physics.Arcade.Body;
     body.velocity.reset();
-    if (this.cursors.up.isDown || this.wasd.up.isDown)
+    if (this.controls.w.isDown)
     {
       body.velocity.y = -this.speed;
     }
-    else if (this.cursors.down.isDown || this.wasd.down.isDown)
+    else if (this.controls.s.isDown)
     {
       body.velocity.y = this.speed;      
     }
 
-    if (this.cursors.left.isDown || this.wasd.left.isDown)
+    if (this.controls.a.isDown)
     {
       body.velocity.x = -this.speed;
     }
-    else if (this.cursors.right.isDown || this.wasd.right.isDown)
+    else if (this.controls.d.isDown)
     {
       body.velocity.x = this.speed;
     }
+    
   }
 }
