@@ -9,9 +9,10 @@ class Main extends Phaser.Game {
     const config: GameConfig = {
       parent: "root",
       type: Phaser.AUTO,
+      backgroundColor: "green",
       physics: { 
         default: 'arcade',
-        impact: {
+        arcade: {
           
         }
       },

@@ -19,17 +19,18 @@ export class Game extends Phaser.Scene {
   create() {
     let map = this.make.tilemap({ key: "level1" });
     let tiles = map.addTilesetImage("temp-sheet", "maptiles");
-    let groundLayer = map.createDynamicLayer("TileLayer1", tiles, 0, 0);
-    // Not working? V
+    let groundLayer = map.createStaticLayer(0, tiles, 0, 0);
     groundLayer.setCollisionByProperty({ collide: true }, true);
+
     // set the boundaries of our game world
     this.physics.world.bounds.width = groundLayer.width;
     this.physics.world.bounds.height = groundLayer.height;
     this.cameras.main.setBounds(0, 0, groundLayer.width, groundLayer.height);
 
-    this.minimap = new Minimap(this);
+    //this.minimap = new Minimap(this);
 
-    this.player = new Player(this, 150, 130);
+    this.player = new Player(this, 200, 130);
+    this.physics.add.collider(this.player, groundLayer);
   }
 
   update() {
