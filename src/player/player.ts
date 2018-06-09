@@ -37,7 +37,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
     else if (this.controls.s.isDown)
     {
-      body.velocity.y = this.speed;      
+      body.velocity.y = this.speed;
     }
 
     if (this.controls.a.isDown)
@@ -48,6 +48,6 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     {
       body.velocity.x = this.speed;
     }
-    
+
   }
 }

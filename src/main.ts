@@ -21,8 +21,8 @@ class Main extends Phaser.Game {
         Preload,
         Game
       ],
-      width: 800,
-      height: 592,
+      width: 1000,
+      height: 600,
     };
     super(config);
     this.scene.start("Boot");
